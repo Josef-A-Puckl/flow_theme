@@ -34,6 +34,9 @@
                                         <button class="btn btn-warning btn-xs hasTooltip pull-right dd-edit-shipping-address" title="[{oxmultilang ident="CHANGE"}]">
                                             <i class="fa fa-pencil"></i>
                                         </button>
+                                        <button class="btn btn-warning btn-xs hasTooltip pull-right dd-delete-shipping-address" title="[{oxmultilang ident="DELETE"}]" data-toggle="modal" data-target="#delete_shipping_address_[{$address->oxaddress__oxid->value}]">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
                                     [{/if}]
                                     [{include file="widget/address/shipping_address.tpl" delivadr=$address}]
                                 </div>
@@ -44,6 +47,7 @@
                                 </div>
                             </div>
                         </div>
+                        [{include file="form/delete_shipping_address.tpl" shippingAddress=$address}]
                     [{/foreach}]
 
                     <div class="col-xs-12 col-md-6 col-lg-4">
